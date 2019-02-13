@@ -9,16 +9,21 @@ void pointer1();
 void pointer2();
 void pointer3();
 void pointer4();
+void class1();
+void pntobj();
 
 int main() {
-	
-	pointer1();
-	pointer2();
-	pointer3();
-	pointer4();
+//	pointer1();
+//	pointer2();
+//	pointer3();
+//	pointer4();
+//	class1();
+	pntobj();
 	return 0;	
+
 }
 
+/* Pointer */ 
 void pointer1() {
 	printf("1. Pointer and Pointer to Pointer\n\n");
 	int a = 100, *pt, **ppt;
@@ -78,4 +83,58 @@ void pointer4() {
 		printf("%d\t", *(values + c));
 	}
 	printf("\n\n");
+}
+
+/* Classes and Objects */ 
+class employee {
+	long ecode;
+	int bsal;
+	float hra, pf;
+	public:
+	void assign(long ecode1, int bsal1, float hra1, float pf1) {
+		ecode = ecode1;
+		bsal = bsal1;
+		hra = hra1;
+		pf = pf1;
+	};
+	float calc_netSalary() {
+		float nsal = bsal+hra-pf;
+		return nsal;
+	};
+};
+
+void class1() {
+	employee emp1, emp2, emp3;
+	emp1.assign(101,10000,1000,900);
+	emp2.assign(102,20000,2000,1000);
+	emp3.assign(103,30000,9000,8000);
+	cout<<endl<<"Emp1: "<<emp1.calc_netSalary()
+	<<endl<<"Emp2: "<<emp2.calc_netSalary()
+	<<endl<<"Emp3: "<<emp3.calc_netSalary();
+}
+
+/* Pointer to Object */
+class products {
+	int pcode;
+	float price;
+	int usold;
+	public:
+	void assign() {
+		pcode = 909;
+		price = 100.99;
+		usold = 100;
+	};
+	void show() {
+		cout<<endl<<"Product code = "<<pcode
+		<<endl<<"Price = "<<price
+		<<endl<<"Units = "<<usold;
+	};
+};
+
+void pntobj() {
+	products pobj;
+	products *pnt;
+	pnt=&pobj;
+	pnt->assign();
+	pnt->show();
 }
