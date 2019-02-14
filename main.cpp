@@ -5,6 +5,15 @@
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 using namespace std;
 
+namespace exampleNS {
+	int i = 0;
+	int j = 1;
+	void printValue(){
+		cout << endl << "i = " << i;
+		cout << endl << "j = " << j;
+	}
+};
+
 void pointer1();
 void pointer2();
 void pointer3();
@@ -13,12 +22,13 @@ void class1();
 void pntobj();
 
 int main() {
-//	pointer1();
-//	pointer2();
-//	pointer3();
-//	pointer4();
-//	class1();
+	pointer1();
+	pointer2();
+	pointer3();
+	pointer4();
+	class1();
 	pntobj();
+	exampleNS::printValue();
 	return 0;	
 
 }
@@ -138,3 +148,5 @@ void pntobj() {
 	pnt->assign();
 	pnt->show();
 }
+
+
