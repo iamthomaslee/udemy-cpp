@@ -27,5 +27,4 @@ int main() {
 	SalesPerson s2(102,"test2",2000);
 	SalesPerson s3(103,"test3",5000);
 	SalesPerson::showTotalSales();
-	s3.showTotalSales();
 }
